@@ -1,4 +1,4 @@
-HAS-A relationship
-Duckクラスは行動を各behaviorクラスに委任している
-アヒルは、行動を継承する代わりに、適切な行動オブジェクトで構成することで行動を取得します。
-このような構成をcompositionという
+- HAS-A relationship
+- Duckクラスは行動を各behaviorクラスに委任している
+- アヒルは、行動を継承する代わりに、適切な行動オブジェクトで構成することで行動を取得する
+- このような構成をcompositionという
