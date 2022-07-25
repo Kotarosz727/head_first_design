@@ -18,11 +18,11 @@ public abstract class Duck {
         quakBehavior.quak();
     }
 
-    public void setFlyBehavior(FlyBehavior $b) {
-        flyBehavior = $b;
+    public void setFlyBehavior(FlyBehavior fb) {
+        flyBehavior = fb;
     }
 
-    public void setQuakBehavior(QuakBehavior $b) {
-        quakBehavior = $b;
+    public void setQuakBehavior(QuakBehavior qb) {
+        quakBehavior = qb;
     }
 }
