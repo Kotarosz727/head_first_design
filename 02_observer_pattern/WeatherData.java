@@ -2,9 +2,9 @@ import java.util.*;
 
 public class WeatherData implements Subject {
     private List<Observer> observers;
-    private float temperture;
-    private float humidity;
-    private float pressure;
+    public float temperture;
+    public float humidity;
+    public float pressure;
 
     public WeatherData() {
         observers = new ArrayList<Observer>();
@@ -20,7 +20,7 @@ public class WeatherData implements Subject {
 
     public void notifyObservers() {
         for(Observer observer: observers) {
-            observer.update(temperture, humidity, pressure);
+            observer.update();
         }
     }
 

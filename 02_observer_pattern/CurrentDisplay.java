@@ -8,9 +8,9 @@ public class CurrentDisplay implements Observer {
         weatherData.registerObserver(this);
     }
 
-    public void update(float temperture, float humidity, float pressure) {
-        this.temperture = temperture;
-        this.humidity = humidity;
+    public void update() {
+        this.temperture = weatherData.temperture;
+        this.humidity = weatherData.humidity;
         display();
     }
 
