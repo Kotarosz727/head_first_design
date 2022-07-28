@@ -4,10 +4,10 @@ public class Mocha extends CondimentDecorator {
     }
 
     public String getDescription() {
-        return this.bevarage.description + "Mocha";
+        return bevarage.getDescription() + "Mocha";
     }
 
     public double cost() {
-        return this.bevarage.cost + .20;
+        return bevarage.cost() + .20;
     }
 }
