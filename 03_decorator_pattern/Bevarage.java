@@ -7,7 +7,7 @@ public abstract class Bevarage {
         return description;
     }
 
-    public size getSize() {
+    public Size getSize() {
         return this.size;
     }
 
