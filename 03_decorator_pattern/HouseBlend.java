@@ -1,6 +1,6 @@
 public class HouseBlend extends Bevarage {
     public HouseBlend() {
-        description = 'this is description';
+        description = "this is houseblend";
     }
 
     public double cost() {
