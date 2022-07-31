@@ -1,14 +1,18 @@
 <?php
 namespace PHP;
 
+require_once 'Pizza.php';
+
 abstract class PizzaStore
 {
+    public Pizza $pizza;
+
     public function orderPizza(String $type): Pizza
     {
-        $pizza = $this->createPizza($type);  
-        $pizza->prepare();
+        $this->pizza = $this->createPizza($type);  
+        $this->pizza->prepare();
         
-        return $pizza;
+        return $this->pizza;
     }
 
     public abstract function createPizza(String $type);

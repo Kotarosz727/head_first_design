@@ -5,8 +5,10 @@ require_once 'Ingredient.php';
 
 class JPDough implements Ingredient
 {
+    private $name = 'JPDough';
+
     public function getName()
     {
-        return 'This is JPDough';
+        return $this->name;
     }
 }

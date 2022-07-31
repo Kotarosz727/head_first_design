@@ -20,5 +20,9 @@ class CheesePizza extends Pizza
         $this->dough = $this->factory->createDough();
         $this->souce = $this->factory->createSouce();
         $this->cheese = $this->factory->createCheese();
+
+        echo 'Dough is '. $this->dough->getName(). PHP_EOL;
+        echo 'Souce is '. $this->souce->getName(). PHP_EOL;
+        echo 'Cheese is '. $this->cheese->getName(). PHP_EOL;
     }
 }
