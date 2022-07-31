@@ -1,23 +1,25 @@
 <?php
 namespace PHP;
 
+require_once 'Ingredient.php';
+
 abstract class Pizza
 {
     protected String $name;
-    protected String $souce;
     protected $toppings = [];
+    public Ingredient $souce;
+    public Ingredient $cheese;
+    public Ingredient $dough;
 
-    public function prepare(): void
-    {
-        echo 'start making '. $this->name. '!';
-        echo 'adding '. $this->souce. '!';
-        foreach ($this->toppings as $val) {
-            echo 'adding '. $val. '!';
-        }
-    }
+    public abstract function prepare(): void;
 
     public function getName(): String
     {
         return $this->name;
+    }
+
+    public function setName(String $name)
+    {
+        $this->name = $name;
     }
 }
