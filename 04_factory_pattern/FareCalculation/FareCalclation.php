@@ -10,12 +10,10 @@ class FareCalclation
     protected int $baseFare;
     private FareInterface $fare;
 
-    public function calcFare()
+    public function calcFare(): int
     {
-        $fare = $this->createFare();
-        $fare = $fare->getFare();
-
-        return $fare;
+        $this->fare = $this->createFare();
+        return $this->fare->getFare();
     }
 
     public function calcBaseFare(): int
