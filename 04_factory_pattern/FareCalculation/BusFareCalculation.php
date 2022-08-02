@@ -7,17 +7,18 @@ require_once 'ChildBusFare.php';
 require_once 'AgedBusFare.php';
 require_once 'FareInterface.php';
 require_once 'TypeEnum.php';
+require_once 'BusFareEnum.php';
 
 class BusFareCalculation extends FareCalclation
 {
     const BASE_FARE = 100;
     private $type;
 
-    public function __construct($start, $end, TypeEnum $type)
+    public function __construct(BusFareEnum $start, BusFareEnum $end, TypeEnum $type)
     {
         $this->baseFare = self::BASE_FARE;
-        $this->start = $start;
-        $this->end = $end;
+        $this->start = $start->value;
+        $this->end = $end->value;
         $this->type = $type;
     }
 

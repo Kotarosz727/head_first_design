@@ -3,12 +3,13 @@ namespace FareCalculation;
 
 require_once 'BusFareCalculation.php';
 require_once 'TypeEnum.php';
+require_once 'BusFareEnum.php';
 
-$fare = new BusFareCalculation(1, 3, TypeEnum::ADULT);
+$fare = new BusFareCalculation(BusFareEnum::MASALA, BusFareEnum::YAMABUKI, TypeEnum::ADULT);
 echo $fare->calcFare(). PHP_EOL;
 
-$fare = new BusFareCalculation(1, 3, TypeEnum::CHILD);
+$fare = new BusFareCalculation(BusFareEnum::HANADA, BusFareEnum::CHANPION_LOAD, TypeEnum::CHILD);
 echo $fare->calcFare(). PHP_EOL;
 
-$fare = new BusFareCalculation(1, 3, TypeEnum::AGED);
+$fare = new BusFareCalculation(BusFareEnum::MASALA, BusFareEnum::YAMABUKI, TypeEnum::AGED);
 echo $fare->calcFare(). PHP_EOL;
