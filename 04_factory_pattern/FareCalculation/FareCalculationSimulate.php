@@ -5,11 +5,17 @@ require_once 'BusFareCalculation.php';
 require_once 'TypeEnum.php';
 require_once 'BusFareEnum.php';
 
-$fare = new BusFareCalculation(BusFareEnum::MASALA, BusFareEnum::YAMABUKI, TypeEnum::ADULT);
+$fare = new BusFareCalculation(TypeEnum::ADULT);
+$fare->setRide(BusFareEnum::MASALA);
+$fare->setExit(BusFareEnum::CHANPION_LOAD);
 echo $fare->calcFare(). PHP_EOL;
 
-$fare = new BusFareCalculation(BusFareEnum::HANADA, BusFareEnum::CHANPION_LOAD, TypeEnum::CHILD);
+$fare = new BusFareCalculation(TypeEnum::CHILD);
+$fare->setRide(BusFareEnum::MASALA);
+$fare->setExit(BusFareEnum::CHANPION_LOAD);
 echo $fare->calcFare(). PHP_EOL;
 
-$fare = new BusFareCalculation(BusFareEnum::MASALA, BusFareEnum::YAMABUKI, TypeEnum::AGED);
+$fare = new BusFareCalculation(TypeEnum::AGED);
+$fare->setRide(BusFareEnum::MASALA);
+$fare->setExit(BusFareEnum::CHANPION_LOAD);
 echo $fare->calcFare(). PHP_EOL;

@@ -14,12 +14,20 @@ class BusFareCalculation extends FareCalclation
     const BASE_FARE = 100;
     private $type;
 
-    public function __construct(BusFareEnum $start, BusFareEnum $end, TypeEnum $type)
+    public function __construct(TypeEnum $type)
     {
         $this->baseFare = self::BASE_FARE;
-        $this->start = $start->value;
-        $this->end = $end->value;
         $this->type = $type;
+    }
+
+    public function setRide(BusFareEnum $start)
+    {
+        $this->start = $start->value;
+    }
+
+    public function setExit(BusFareEnum $end)
+    {
+        $this->end = $end->value;
     }
 
     public function createFare(): FareInterface
