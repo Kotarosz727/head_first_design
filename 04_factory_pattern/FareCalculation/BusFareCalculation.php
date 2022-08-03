@@ -8,8 +8,9 @@ require_once 'AgedBusFare.php';
 require_once 'FareInterface.php';
 require_once 'TypeEnum.php';
 require_once 'BusFareEnum.php';
+require_once 'FareCalculationInterface.php';
 
-class BusFareCalculation extends FareCalclation
+class BusFareCalculation extends FareCalclation implements FareCalculationInterface
 {
     const BASE_FARE = 100;
     private $type;
@@ -20,12 +21,12 @@ class BusFareCalculation extends FareCalclation
         $this->type = $type;
     }
 
-    public function setRide(BusFareEnum $start)
+    public function setRide(BusFareEnum $start): void
     {
         $this->start = $start->value;
     }
 
-    public function setExit(BusFareEnum $end)
+    public function setExit(BusFareEnum $end): void
     {
         $this->end = $end->value;
     }
