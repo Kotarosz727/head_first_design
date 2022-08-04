@@ -9,6 +9,7 @@ require_once 'FareInterface.php';
 require_once 'TypeEnum.php';
 require_once 'BusFareEnum.php';
 require_once 'FareCalculationInterface.php';
+require_once 'FareEnumInterface.php';
 
 class BusFareCalculation extends FareCalclation implements FareCalculationInterface
 {
@@ -21,12 +22,12 @@ class BusFareCalculation extends FareCalclation implements FareCalculationInterf
         $this->type = $type;
     }
 
-    public function setRide(BusFareEnum $start): void
+    public function setRide(FareEnumInterface $start): void
     {
         $this->start = $start->value;
     }
 
-    public function setExit(BusFareEnum $end): void
+    public function setExit(FareEnumInterface $end): void
     {
         $this->end = $end->value;
     }
