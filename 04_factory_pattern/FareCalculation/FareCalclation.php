@@ -23,7 +23,7 @@ class FareCalclation
         }
 
         if ($this->start && $this->start > $this->end) {
-            echo '乗車地点が降車地点より前です';
+            echo '乗車地点を降車地点より前に設定してください';
             return false;
         }
 
