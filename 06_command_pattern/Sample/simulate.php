@@ -6,8 +6,8 @@ require_once 'LightOnCommand.php';
 require_once 'LightOffCommand.php';
 
 $controller = new RemoteControl;
-$controller->setCommand(1, new LightOnCommand);
-$controller->setCommand(2, new LightOffCommand);
+$controller->setOnCommand(1, new LightOnCommand);
+$controller->setOffCommand(1, new LightOffCommand);
 
 $controller->executeOnCommand(1);
-$controller->executeOnCommand(2);
+$controller->executeOffCommand(1);

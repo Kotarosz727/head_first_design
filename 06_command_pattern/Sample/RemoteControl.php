@@ -5,31 +5,34 @@ require_once 'Command.php';
 
 class RemoteControl
 {
-    private array $commnads;
+    private array $onCommnads;
+    private array $offCommands;
 
     public function __construct()
     {
-        $this->commnads = [];
+        $this->onCommnads = [];
+        $this->offCommands = [];
     }
 
-    public function getCommnads()
+    public function setOnCommand(int $slot, Command $command)
     {
-        print_r($this->commands);
+        $this->onCommands[$slot] = $command;
     }
 
-    public function setCommand(int $slot, Command $command)
+    public function setOffCommand(int $slot, Command $command)
     {
-        $this->commands[$slot] = $command;
+        $this->offCommands[$slot] = $command;
     }
 
     public function executeOnCommand(int $slot)
     {
-        $command = $this->commands[$slot];
+        $command = $this->onCommands[$slot];
         $command->execute();
     }
 
     public function executeOffCommand(int $slot)
     {
-        $this->commnads[$slot]->execute();
+        $command = $this->offCommands[$slot];
+        $command->execute();
     }
 }
