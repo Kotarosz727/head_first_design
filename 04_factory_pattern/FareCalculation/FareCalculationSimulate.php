@@ -12,6 +12,10 @@ require_once 'TrainFareEnum.php';
 require_once 'PlaneFareCalculation.php';
 require_once 'PlaneFareEnum.php';
 
+require_once 'Tax.php';
+
+$tax = new Tax();
+
 $adultBusFare = new BusFareCalculation(TypeEnum::ADULT);
 $adultBusFare->setRide(BusFareEnum::MASALA);
 $adultBusFare->setExit(BusFareEnum::CHANPION_LOAD);
@@ -35,4 +39,8 @@ echo $adultTrainFare->calcFare(). PHP_EOL;
 $adultPlaneFare = new PlaneFareCalculation(TypeEnum::ADULT);
 $adultPlaneFare->setRide(PlaneFareEnum::JOTO);
 $adultPlaneFare->setExit(PlaneFareEnum::ALOLA);
-echo number_format($adultPlaneFare->calcFare()). PHP_EOL;
+$price = $adultPlaneFare->calcFare();
+echo number_format($price). PHP_EOL;
+
+$includeTaxPrice = $tax->includeTax($price);
+echo number_format($includeTaxPrice). PHP_EOL;
