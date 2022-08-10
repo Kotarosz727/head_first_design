@@ -1,33 +1,34 @@
 <?php
 namespace Sample;
 
-class Caffein
+abstract class Caffein
 {
-    public function prepare()
+    public function prepare($bool)
     {
         $this->boilWater();
         $this->brew();
         $this->poorInCup();
 
-        if ($this->wantsCondimentsHook()) {
+        if ($this->wantsCondimentsHook($bool)) {
             $this->addCondiments();
         }
     }
 
-    public function boilWater(): void
+    public final function boilWater(): void
     {
         echo 'Boil water.'. PHP_EOL;
     }
 
-    public function brew(): void{}
+    // premitive opration, which is implemented by concrete subclasses. 
+    public abstract function brew(): void;
 
-    public function poorInCup(): void
+    public final function poorInCup(): void
     {
         echo 'Poor in Cup.'. PHP_EOL;
     }
 
-    public function addCondiments(): void {}
+    // premitive opration, which is implemented by concrete subclasses. 
+    public abstract function addCondiments(): void;
 
-    public function wantsCondimentsHook()
-    {}
+    public abstract function wantsCondimentsHook();
 }
