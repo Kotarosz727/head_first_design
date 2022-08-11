@@ -15,10 +15,10 @@ class myData implements IteratorAggregate {
 
 $obj = new myData;
 
-// foreach($obj as $key => $value) {
-//   var_dump($key, $value);
-//   echo "\n";
-// }
+foreach($obj as $key => $value) {
+  var_dump($key, $value);
+  echo "\n";
+}
 
 $iterator = $obj->getIterator();
 $count = $iterator->count();
@@ -28,4 +28,9 @@ while($iterator->valid()) {
   echo $iterator->key() . ' => ' . $iterator->current() . "\n";
 
   $iterator->next();
+}
+
+foreach ($iterator as $key => $val) {
+  var_dump($key, $val);
+  echo "\n";
 }
