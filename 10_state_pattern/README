@@ -1,2 +1,4 @@
 ### Note
 - State パターンを使用すると、オブジェクトの内部状態が変化したときにオブジェクトの動作を変更できます。オブジェクトはそのクラスを変更するように見えます。
+
+<img width="698" alt="image" src="https://user-images.githubusercontent.com/50207951/185051070-9848d88d-ee2c-459b-98fa-8cd07c839508.png">
